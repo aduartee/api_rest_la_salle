@@ -14,8 +14,8 @@ With this API, you can perform basic CRUD operations:
     (U) - Update 
     (D) - Delete 
 
-Getting Started
-
+## Getting Started
+---
 To run the API locally, follow these steps:
 
 ### References
