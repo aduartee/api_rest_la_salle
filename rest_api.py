@@ -44,18 +44,16 @@ question_schema = {
 def get_questions():
     questions = list(collection.find())
     
-    question_formated = []
+    question_formatted = []
     for question in questions:
-        question_formated = {
+        question_formatted.append({
             "id": str(question['_id']),
             "title": question['title'],
             "questions": question['questions'],
             "response": question['response']
-        }
+        })
         
-        question_formated.append(question_formated)
-        
-        return jsonify(question_formated), 200
+    return jsonify(question_formatted), 200
     
 @app.route('/questions', methods=['POST'])
 def add_question():
@@ -76,12 +74,11 @@ def update_question(question_id):
         if not collection.find_one({"_id": ObjectId(question_id)}):
             return jsonify({"error": "Question not found"}), 404
         
-        # Obtém os dados da requisição
         updated_question = request.get_json()
 
         collection.update_one({"_id": ObjectId(question_id)}, {"$set": updated_question})
 
-        return jsonify({"message": "Question updated"}), 200
+        return jsonify({"message": "Question was updated"}), 200
     
     except JSONSchemaValidationError as e:
         return jsonify({"error": str(e)}), 400
@@ -113,4 +110,5 @@ def delete_question(question_id):
 
 
 if __name__ == "__main__":
+    print(app.url_map)
     app.run()
