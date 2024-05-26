@@ -15,6 +15,34 @@ With this API, you can perform basic CRUD operations:
 ## Getting Started
 To run the API locally, follow these steps:
 
+
+## How can you test the API? 
+Run this commands in temrminal:
+1. List all questions (GET):
+`
+curl -X GET http://localhost:5000/questions
+`
+
+2. Get a specific question by ID (GET):
+`
+curl -X GET http://localhost:5000/questions/<question_id>
+`
+
+3. Add a new question (POST):
+`
+curl -X POST -H "Content-Type: application/json" -d '{"title": "New Question", "questions": ["Option 1", "Option 2", "Option 3"], "response": 0}' http://localhost:5000/questions
+`
+
+4. Update an existing question (PUT):
+`
+curl -X PUT -H "Content-Type: application/json" -d '{"title": "Updated Question", "questions": ["New Option 1", "New Option 2", "New Option 3"], "response": 1}' http://localhost:5000/questions/<question_id>
+` 
+
+5. Delete an existing question (DELETE):
+`
+curl -X DELETE http://localhost:5000/questions/<question_id>
+`
+
 ### References
 - https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/#std-label-install-mdb-community-ubuntu
 - https://medium.com/featurepreneur/mongodb-crud-with-flask-e5700ad7996e
