@@ -48,6 +48,8 @@ curl -X DELETE http://localhost:5000/questions/<question_id>
 
 ## How can you run this project?
 
+### Make sure to install Python 3.x and MongoDB on your system before proceeding.
+
 1. Clone the project repository to your local system:
 
     ```bash
@@ -80,7 +82,13 @@ curl -X DELETE http://localhost:5000/questions/<question_id>
     pip install -r requirements.txt
     ```
 
-6. Start the Flask server:
+6. Install project dependencies:
+
+    ```bash
+    service mongod start
+    ```
+
+7. Start the Flask server:
 
     ```bash
     python rest_api.py
