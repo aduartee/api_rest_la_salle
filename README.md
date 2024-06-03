@@ -43,6 +43,52 @@ curl -X PUT -H "Content-Type: application/json" -d '{"title": "Updated Question"
 curl -X DELETE http://localhost:5000/questions/<question_id>
 `
 
+### Project Running
+![image](https://github.com/aduartee/api_rest_la_salle/assets/103082913/1a2c9d77-8331-4e68-be94-a1971bfbbc33)
+
+## How can you run this project?
+
+1. Clone the project repository to your local system:
+
+    ```bash
+    git clone https://github.com/aduartee/api_rest_la_salle.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd your-project
+    ```
+
+3. Create a Python virtual environment:
+
+    ```bash
+    python -m venv venv
+    ```
+
+4. Activate the virtual environment:
+
+    - On Linux/macOS:
+
+    ```bash
+    source venv/bin/activate
+    ```
+
+5. Install project dependencies:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+6. Start the Flask server:
+
+    ```bash
+    python rest_api.py
+    ```
+
+    This will start the Flask server on the default port `5000`.
+
+
 ### References
 - https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/#std-label-install-mdb-community-ubuntu
 - https://medium.com/featurepreneur/mongodb-crud-with-flask-e5700ad7996e
